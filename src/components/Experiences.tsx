@@ -5,7 +5,7 @@ import imgHTML from "../assets/techno/html.png";
 import imgNEXT from "../assets/techno/next-js.webp";
 import imgNODE from "../assets/techno/node-js.png";
 import imgPYTHON from "../assets/techno/python.png";
-import imgTAILWIND from "../assets/techno/tailwind.png";
+import imgFLUTTER from "../assets/techno/flutter.png";
 import imgLARAVEL from "../assets/techno/laravel.png";
 import glotelho from "../assets/companies/glotelho.png";
 import umbrella from "../assets/companies/umbrella.png";
@@ -16,9 +16,9 @@ const skills = [
     { id: 1, name: "HTML", image: imgHTML },
     { id: 2, name: "CSS", image: imgCSS },
     { id: 3, name: "JavaScript", image: imgJS },
-    { id: 6, name: "Tailwind CSS", image: imgTAILWIND },
     { id: 4, name: "React", image: imgREACT },
     { id: 8, name: "Next.js", image: imgNEXT },
+    { id: 6, name: "Flutter", image: imgFLUTTER },
     { id: 9, name: "Laravel", image: imgLARAVEL },
     { id: 5, name: "Node.js", image: imgNODE },
     { id: 7, name: "Python", image: imgPYTHON },
@@ -54,7 +54,7 @@ const experiences = [
         period: "Aout 2024 - Oct 2024",
         description: [
             "Développement d'un backend laravel pour une machine ATM (Automated Teller Machine).",
-            "Implémentation de l'architecture S.O.L.I.D.S pour une meilleure maintenabilité du code.",
+            "Implémentation de l'architecture S.O.L.I.D pour une meilleure maintenabilité du code.",
         ],
         image: glotelho,
     },

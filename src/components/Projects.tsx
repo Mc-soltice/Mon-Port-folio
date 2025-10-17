@@ -8,30 +8,30 @@ import AnimatedContent from '../ui/AnimatedContent';
 const projects = [
     {
         id: 1,
-        title: 'ERP pour la gestion des agnets d\'entretien de Umbrella Industrial Services',
-        description: 'Une application web complète pour gérer: les candidature, les agents d\'entretien, les plannings, les sites et les rapports d\'intervention, la comptabilité des jour de travail, la gestion des depenses .',
+        title: 'Site web de umbrella industrial services',
+        description: 'Site vitrine professionnel pour Umbrella Industrial Services, lié aux differentes pages sociale, mettant en avant leurs services, offres, projets, recrutement et informations de contact.',
+        technologies: ['HTML', 'CSS', 'JavaScript'],
+        demoLink: 'https://umbrellaindustrialservices.com/',
+        repoLink: '#',
+        image: img3,
+    },
+    {
+        id: 2,
+        title: 'ERP pour la gestion des agnets d\'entretien',
+        description: 'Une ERP sur mesure pour gérer: les candidature, les agents d\'entretien, les plannings, les sites et les rapports d\'intervention, la gestion des depenses .',
         technologies: ['React', 'TypeScript', 'Tailwind CSS','DaisyUI','Laravel'],
         demoLink: '#',
         repoLink: 'https://github.com/Mc-soltice/umbrella_erp_front',
         image: img1,
     },
     {
-        id: 2,
+        id: 3,
         title: 'Gestion des revenus et dépenses',
         description: 'C\'est uene application web complète pour controler  les flus de revenus et dépenses personnelles, offrant des fonctionnalités de de génération de ratio.',
         technologies: ['Next.js', 'TypeScript', 'Tailwind CSS','DaisyUI', 'Django-DRF'],
         demoLink: '#',
         repoLink: 'https://github.com/Mc-soltice/Gestion-des-transactions.git',
         image: img2,
-    },
-    {
-        id: 3,
-        title: 'Portfolio interactif',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae magni deserunt debitis recusandae ab harum totam, eum facilis et ratione officia ut inventore aspernatur',
-        technologies: ['HTML', 'CSS', 'JavaScript'],
-        demoLink: '#',
-        repoLink: '#',
-        image: img3,
     },
 ];
 
@@ -78,11 +78,11 @@ const Projects = () => {
                                 ))}
                             </div>
                             <div className="flex">
-                                <a className="btn btn-accent w-2/3" href={project.demoLink}>
+                                <a className="btn btn-accent w-2/3" href={project.demoLink} target="_blank">
                                     Demo
                                     <Video className="w-4" />
                                 </a>
-                                <a className="btn btn-neutral w-1/3 ml-2" href={project.repoLink}>
+                                <a className="btn btn-neutral w-1/3 ml-2" href={project.repoLink} target="_blank">
                                     <Github className="w-4" />
                                 </a>
                             </div>
