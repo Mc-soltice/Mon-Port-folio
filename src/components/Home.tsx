@@ -27,7 +27,7 @@ const Home = () => {
                 >
                     <div className="flex justify-center items-center gap-2">
 
-                        <Mail className="w-5 h-5" />
+                        <Mail className="w-5 h-5" href="https://wa.me/237696063115" />
                         Contactez-moi
                     </div>
                 </StarBorder>
