@@ -31,13 +31,13 @@ const Home = () => {
                             href="https://wa.me/237696063115"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-green-600 hover:underline"
+                            className="flex items-center gap-2 text-gray-900 hover:underline"
                         >
                             <Mail className="w-5 h-5" />
-                            Contacter sur WhatsApp
+                            Contactez-moi
                         </a>
 
-                        Contactez-moi
+
                     </div>
                 </StarBorder>
 
