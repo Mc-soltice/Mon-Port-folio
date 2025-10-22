@@ -27,7 +27,16 @@ const Home = () => {
                 >
                     <div className="flex justify-center items-center gap-2">
 
-                        <Mail className="w-5 h-5" href="https://wa.me/237696063115" />
+                        <a
+                            href="https://wa.me/237696063115"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-green-600 hover:underline"
+                        >
+                            <Mail className="w-5 h-5" />
+                            Contacter sur WhatsApp
+                        </a>
+
                         Contactez-moi
                     </div>
                 </StarBorder>
