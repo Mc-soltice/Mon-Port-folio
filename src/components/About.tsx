@@ -18,6 +18,12 @@ const aboutSections = [
     },
     {
         id: 3,
+        title: "Developpeur Mobile",
+        description: "Creer des applications mobiles performantes et réactives sous flutter ",
+        icon: <Paintbrush className="text-accent scale-150" />,
+    },
+    {
+        id: 4,
         title: "Passionné par l'UI/UX",
         description: "Créer des interfaces utilisateur attrayantes et fonctionnelles est ma priorité.",
         icon: <Paintbrush className="text-accent scale-150" />,
