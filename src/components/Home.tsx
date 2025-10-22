@@ -1,8 +1,11 @@
-import { Mail } from "lucide-react"
-import img from '../assets/img2.jpg'
-import StarBorder from "../ui/StarBorder"
+import { Mail } from "lucide-react";
+import img from '../assets/img2.jpg';
+import StarBorder from "../ui/StarBorder";
 
 const Home = () => {
+    const handleClick = () => {
+        window.open("https://wa.me/237696063115", "_blank");
+    };
     return (
         <div id="Home" className="flex flex-col-reverse md:flex-row justify-center items-center md:my-32 my-10">
 
@@ -20,24 +23,15 @@ const Home = () => {
 
                 <StarBorder
                     as="button"
-                    className="custom-class"
+                    onClick={handleClick}
+                    className="custom-class cursor-pointer"
                     color="cyan"
                     speed="2s"
                     thickness={2}
                 >
-                    <div className="flex justify-center items-center gap-2">
-
-                        <a
-                            href="https://wa.me/237696063115"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-gray-900 hover:underline"
-                        >
-                            <Mail className="w-5 h-5" />
-                            Contactez-moi
-                        </a>
-
-
+                    <div className="flex justify-center items-center gap-2 text-gray-900">
+                        <Mail className="w-5 h-5" />
+                        <span>Contactez-moi</span>
                     </div>
                 </StarBorder>
 
