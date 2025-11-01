@@ -17,7 +17,7 @@ const Home = () => {
 
                 <p className="my-4 text-md text-center md:text-left">
                     Je suis un développeur fullstack <br />
-                    avec 5 ans d'expérience, utilisant React <br /> et Node.js. Contactez-moi si vous avez besoin
+                    avec 2 ans d'expérience, utilisant React <br /> et Node.js. Contactez-moi si vous avez besoin
                     de mes services.
                 </p>
 
