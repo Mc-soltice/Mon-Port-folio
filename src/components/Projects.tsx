@@ -3,12 +3,12 @@ import img1 from '../assets/projects/1.png';
 import img2 from '../assets/projects/2.png';
 import AnimatedContent from '../ui/AnimatedContent';
 import ShinyText from "../ui/ShinyText";
-import FramerCarouselThumbnails from "./Miniatures";
+import FramerAutoplayCarousel from "./Miniatures";
 
 const projects = [
     {
         id: 1,
-        folderPath: 'projects/atoum-ra',
+        folderPath: 'projects/atoum-ra', // Utilise folderPath pour charger automatiquement les images
         title: 'Atoum-ra Mbiangasi forever',
         description: 'Site E-commerce pour Atoum-ra : Client et Administrateur.',
         technologies: ['NextJS', 'TypeScript', 'Tailwind CSS', 'Laravel'],
@@ -17,26 +17,17 @@ const projects = [
     },
     {
         id: 2,
-        folderPath: 'projects/roilux',
+        folderPath: 'projects/roilux', // Utilise folderPath pour charger automatiquement les images
         title: 'Roilux',
         description: 'Landing page pour Roilux dans le secteur immobilier.',
         technologies: ['NextJS', 'TypeScript', 'Tailwind CSS'],
         demoLink: '#',
         repoLink: 'https://github.com/Mc-soltice/Rolux-landing',
     },
-    // {
-    //     id: 3,
-    //     folderPath: 'projects/umbrella',
-    //     title: 'Site web de umbrella industrial services',
-    //     description: 'Site vitrine professionnel pour Umbrella Industrial Services, lié aux differentes pages sociale, mettant en avant leurs services, offres, projets, recrutement et informations de contact.',
-    //     technologies: ['HTML', 'CSS', 'JavaScript'],
-    //     demoLink: 'https://umbrellaindustrialservices.com/',
-    //     repoLink: '#',
-    // },
     {
         id: 3,
-        title: 'ERP pour la gestion des agnets d\'entretien',
-        description: 'Une ERP sur mesure pour gérer: les candidature, les agents d\'entretien, les plannings, les sites et les rapports d\'intervention, la gestion des depenses .',
+        title: 'ERP pour la gestion des agents d\'entretien',
+        description: 'Une ERP sur mesure pour gérer: les candidature, les agents d\'entretien, les plannings, les sites et les rapports d\'intervention, la gestion des depenses: front React, backend .',
         technologies: ['React', 'TypeScript', 'Tailwind CSS', 'DaisyUI', 'Laravel'],
         demoLink: '#',
         repoLink: 'https://github.com/Mc-soltice/umbrella_erp_front',
@@ -45,7 +36,7 @@ const projects = [
     {
         id: 4,
         title: 'Gestion des revenus et dépenses',
-        description: 'C\'est uene application web complète pour controler  les flus de revenus et dépenses personnelles, offrant des fonctionnalités de de génération de ratio.',
+        description: 'C\'est une application web complète pour controler les flux de revenus et dépenses personnelles, offrant des fonctionnalités de génération de ratio.',
         technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'DaisyUI', 'Django-DRF'],
         demoLink: '#',
         repoLink: 'https://github.com/Mc-soltice/Gestion-des-transactions.git',
@@ -68,23 +59,26 @@ const Projects = () => {
                         key={project.id}
                         distance={50}
                         direction="vertical"
-                        reverse={true} // Du bas vers le haut
-                        duration={2} // 2 secondes
-                        delay={index * 0.2} // Délai successif entre chaque projet
-                        scale={0.6} // Commence à 60%
+                        reverse={true}
+                        duration={2}
+                        delay={index * 0.2}
+                        scale={0.6}
                         initialOpacity={0.7}
                         animateOpacity={true}
                         ease="power3.out"
                     >
-                        <div className="bg-base-300 p-4  rounded-xl shadow-lg">
-                            {!project.folderPath ? (
+                        <div className="bg-base-300 p-4 rounded-xl shadow-lg">
+                            {project.folderPath ? (
+                                <FramerAutoplayCarousel
+                                    folderPath={project.folderPath}
+                                    duration={4000}
+                                />
+                            ) : (
                                 <img
                                     src={project.image}
                                     alt={project.title}
                                     className="w-full rounded-xl h-56 object-cover"
                                 />
-                            ) : (
-                                <FramerCarouselThumbnails folderPath={project.folderPath} />
                             )}
 
                             <div>
