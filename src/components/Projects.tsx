@@ -1,34 +1,52 @@
+import { Github, Video } from "lucide-react";
 import img1 from '../assets/projects/1.png';
 import img2 from '../assets/projects/2.png';
-import img3 from '../assets/projects/3.png';
-import { Github, Video } from "lucide-react";
-import ShinyText from "../ui/ShinyText";
 import AnimatedContent from '../ui/AnimatedContent';
+import ShinyText from "../ui/ShinyText";
+import FramerCarouselThumbnails from "./Miniatures";
 
 const projects = [
     {
         id: 1,
-        title: 'Site web de umbrella industrial services',
-        description: 'Site vitrine professionnel pour Umbrella Industrial Services, lié aux differentes pages sociale, mettant en avant leurs services, offres, projets, recrutement et informations de contact.',
-        technologies: ['HTML', 'CSS', 'JavaScript'],
-        demoLink: 'https://umbrellaindustrialservices.com/',
-        repoLink: '#',
-        image: img3,
+        folderPath: 'projects/atoum-ra',
+        title: 'Atoum-ra Mbiangasi forever',
+        description: 'Site E-commerce pour Atoum-ra : Client et Administrateur.',
+        technologies: ['NextJS', 'TypeScript', 'Tailwind CSS', 'Laravel'],
+        demoLink: '#',
+        repoLink: 'https://github.com/Mc-soltice/Atoum-Frontend',
     },
     {
         id: 2,
+        folderPath: 'projects/roilux',
+        title: 'Roilux',
+        description: 'Landing page pour Roilux dans le secteur immobilier.',
+        technologies: ['NextJS', 'TypeScript', 'Tailwind CSS'],
+        demoLink: '#',
+        repoLink: 'https://github.com/Mc-soltice/Rolux-landing',
+    },
+    // {
+    //     id: 3,
+    //     folderPath: 'projects/umbrella',
+    //     title: 'Site web de umbrella industrial services',
+    //     description: 'Site vitrine professionnel pour Umbrella Industrial Services, lié aux differentes pages sociale, mettant en avant leurs services, offres, projets, recrutement et informations de contact.',
+    //     technologies: ['HTML', 'CSS', 'JavaScript'],
+    //     demoLink: 'https://umbrellaindustrialservices.com/',
+    //     repoLink: '#',
+    // },
+    {
+        id: 3,
         title: 'ERP pour la gestion des agnets d\'entretien',
         description: 'Une ERP sur mesure pour gérer: les candidature, les agents d\'entretien, les plannings, les sites et les rapports d\'intervention, la gestion des depenses .',
-        technologies: ['React', 'TypeScript', 'Tailwind CSS','DaisyUI','Laravel'],
+        technologies: ['React', 'TypeScript', 'Tailwind CSS', 'DaisyUI', 'Laravel'],
         demoLink: '#',
         repoLink: 'https://github.com/Mc-soltice/umbrella_erp_front',
         image: img1,
     },
     {
-        id: 3,
+        id: 4,
         title: 'Gestion des revenus et dépenses',
         description: 'C\'est uene application web complète pour controler  les flus de revenus et dépenses personnelles, offrant des fonctionnalités de de génération de ratio.',
-        technologies: ['Next.js', 'TypeScript', 'Tailwind CSS','DaisyUI', 'Django-DRF'],
+        technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'DaisyUI', 'Django-DRF'],
         demoLink: '#',
         repoLink: 'https://github.com/Mc-soltice/Gestion-des-transactions.git',
         image: img2,
@@ -44,7 +62,7 @@ const Projects = () => {
                 speed={2.5}
             />
 
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-2 gap-4">
                 {projects.map((project, index) => (
                     <AnimatedContent
                         key={project.id}
@@ -58,12 +76,17 @@ const Projects = () => {
                         animateOpacity={true}
                         ease="power3.out"
                     >
-                        <div className="bg-base-300 p-5 h-fit rounded-xl shadow-lg">
-                            <img
-                                src={project.image}
-                                alt={project.title}
-                                className="w-full rounded-xl h-56 object-cover"
-                            />
+                        <div className="bg-base-300 p-4  rounded-xl shadow-lg">
+                            {!project.folderPath ? (
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="w-full rounded-xl h-56 object-cover"
+                                />
+                            ) : (
+                                <FramerCarouselThumbnails folderPath={project.folderPath} />
+                            )}
+
                             <div>
                                 <h1 className="my-2 font-bold">
                                     {project.title}
@@ -90,6 +113,7 @@ const Projects = () => {
                     </AnimatedContent>
                 ))}
             </div>
+
         </div>
     )
 }
