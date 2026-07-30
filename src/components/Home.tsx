@@ -16,10 +16,13 @@ const Home = () => {
                 </h1>
 
                 <p className="my-4 text-md text-center md:text-left">
-                    Je suis un développeur fullstack <br />
-                    avec 2 ans d'expérience, utilisant React <br /> et Node.js. Contactez-moi si vous avez besoin
-                    de mes services.
-                </p>
+  Développeur Full-Stack passionné, je conçois des applications
+  web modernes, performantes et évolutives. Curieux, rigoureux et
+  toujours en quête d'excellence, j'accorde une attention particulière
+  à l'architecture logicielle, aux bonnes pratiques et à la qualité
+  du code afin de transformer chaque idée en une solution fiable
+  et durable.
+</p>
 
                 <StarBorder
                     as="button"

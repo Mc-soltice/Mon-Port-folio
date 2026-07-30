@@ -29,6 +29,14 @@ const Navbar = () => {
                     </li>
 
                     <li>
+                        <a href="#Parcours"
+                            className="btn btn-sm btn-ghost"
+                        >
+                            Mon parcours
+                        </a>
+                    </li>
+
+                    <li>
                         <a href="#Experiences"
                             className="btn btn-sm btn-ghost"
                         >

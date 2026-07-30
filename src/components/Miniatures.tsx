@@ -7,12 +7,14 @@ interface FramerAutoplayCarouselProps {
   folderPath?: string;
   items?: ImageItem[];
   duration?: number;
+  className?: string;
 }
 
 export default function FramerAutoplayCarousel({
   folderPath,
   items: propItems,
-  duration = 3000
+  duration = 3000,
+  className
 }: FramerAutoplayCarouselProps) {
   const [index, setIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -59,26 +61,26 @@ export default function FramerAutoplayCarousel({
   }, [isHovered, duration, loadedItems.length]);
 
   if (loadedItems.length === 0) {
-    return <div className="w-full h-[400px] bg-gray-200 rounded-lg flex items-center justify-center">
+    return <div className={"w-full h-full bg-gray-200 rounded-lg flex items-center justify-center " + (className || '')}>
       <p className="text-gray-500">Aucune image disponible</p>
     </div>;
   }
 
   return (
-    <div className='w-full lg:p-2 sm:p-4 p-2'>
+    <div className={'w-full h-full ' + (className || '')}>
       <h2 className='text-2xl mb-4 sr-only'>
         Autoplay Carousel (Hover to Pause)
       </h2>
-      <div className='flex flex-col gap-3'>
+      <div className='flex flex-col h-full'>
         <div
-          className='relative overflow-hidden rounded-lg'
+          className='relative flex-1 min-h-0 overflow-hidden rounded-lg'
           ref={containerRef}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <motion.div className='flex' style={{ x }}>
+          <motion.div className='flex h-full' style={{ x }}>
             {loadedItems.map((item) => (
-              <div key={item.id} className='shrink-0 w-full h-[400px]'>
+              <div key={item.id} className='shrink-0 w-full h-full'>
                 <img
                   src={item.url}
                   alt={item.title}
